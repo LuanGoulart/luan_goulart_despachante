@@ -122,15 +122,33 @@
   <!-- Botão Salvar Contato no celular -->
   <button class="contato-btn-mobile" onclick="salvarTodosContatosNoCelular()">📇 Salvar Contatos</button>
 
-    <!-- SnapWidget -->
+  <!-- SnapWidget -->
+<!-- Container do SnapWidget -->
+<div style="position: relative; width: 100%; max-width: 400px; margin: 20px auto; border-radius: 10px; overflow: hidden;">
+  
+  <!-- Iframe do SnapWidget -->
+  <iframe src="https://snapwidget.com/embed/1107129" 
+      class="snapwidget-widget" 
+      allowtransparency="true" frameborder="0" scrolling="no" 
+      style="border:none; overflow:hidden; width:100%; height:400px;" 
+      title="Posts from Instagram"></iframe>
+  
+  <!-- Camada invisível que bloqueia clique -->
+  <div style="position: absolute; top:0; left:0; width:100%; height:100%; z-index:10;"></div>
+</div>
+
+<!-- Script do SnapWidget -->
 <script src="https://snapwidget.com/js/snapwidget.js"></script>
-<iframe src="https://snapwidget.com/embed/1107129" class="snapwidget-widget" allowtransparency="true" frameborder="0" scrolling="no" style="border:none; overflow:hidden;
-  width:60%; " title="Posts from Instagram"></iframe>
+
+
+  
+  
   <!-- LightWidget -->
-  <div class="lightwidget-wrapper">
+  <!--  <div class="lightwidget-wrapper">
     <iframe src="//lightwidget.com/widgets/e4723e6c3d935ecc9454d86a54559098.html"
         scrolling="no" allowtransparency="true" style="width: 60%;"></iframe>
-  </div>
+  </div>-->
+  
 </div>
 <p contenteditable="true">Documentos, CNH, Veículos, Multas e mais!</p>
 
