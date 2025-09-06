@@ -184,14 +184,7 @@ function salvarTodosContatosNoCelular() {
     return;
   }
 
-  // Opção de compartilhar URL (apenas em mobile com Web Share suportado)
-  if (navigator.share) {
-    navigator.share({
-      title: "Luan Goulart Despachante",
-      text: "Entre em contato via WhatsApp, Instagram ou Facebook!",
-      url: window.location.href
-    }).catch(err => console.log("Erro ao compartilhar:", err));
-  }
+ 
 
   // Criar vCard para salvar contatos
   try {
