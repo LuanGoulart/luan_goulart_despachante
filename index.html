@@ -89,7 +89,13 @@
 </div>
 
 <button class="pix-btn" onclick="copiarPixAutomatico()">📋 Pix</button>
-<button class="contato-btn" onclick="salvarTodosContatosNoCelular()">📇 Salvar Contato</button>
+<button class="contato-btn" 
+if(isMobile){
+  <span id="instrucoesContato">
+    <strong>Contato baixado!</strong><br><br>
+  </span>
+else} onclick="salvarTodosContatosNoCelular()">📇 Salvar Contato</button>
+
 <span id="copiedMsg">Copiado!</span>
 
 <div id="instrucoesContato">
@@ -181,11 +187,19 @@ function salvarTodosContatosNoCelular() {
 
   if (!isMobile) {
     alert("Essa função só funciona em celulares.");
+    
     return;
   }
 
   // Opção de compartilhar URL (apenas em mobile com Web Share suportado)
-  
+  /*if (navigator.share) {
+    navigator.share({
+      title: "Luan Goulart Despachante",
+      text: "Entre em contato via WhatsApp, Instagram ou Facebook!",
+      url: window.location.href
+    }).catch(err => console.log("Erro ao compartilhar:", err));
+  }*/
+
   // Criar vCard para salvar contatos
   try {
     const vCard = `BEGIN:VCARD
