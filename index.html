@@ -15,7 +15,7 @@
     transition: all 0.3s ease;
   }
   .content { padding: 50px 20px; }
-  .icons { font-size: 50px; margin: 20px 0; }
+  .icons { font-size: 35px; margin: 20px 0; }
   .icons a { margin: 0 15px; text-decoration: none; transition: color 0.3s ease; }
   h1,h2,p { cursor: text; }
   h2 { margin-top: 40px; font-size: 24px; font-weight: normal; color: #ddd; }
@@ -53,6 +53,28 @@
     background: #fff; color: #000; border: none; padding: 5px 10px;
     border-radius: 5px; cursor: pointer; margin-top: 10px;
   }
+  .contato-btn-mobile {
+  margin-top: 20px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  transition: all 0.3s ease;
+  display: none; /* escondido por padrão */
+}
+
+/* Só mostra no celular */
+@media (max-width: 768px) {
+  .contato-btn-mobile {
+    display: inline-block;
+  }
+}
+
 
   .menu-toggle {
     position: fixed; bottom: 80px; right: 20px; background: rgba(0,0,0,0.7);
@@ -79,22 +101,20 @@
   <h2 contenteditable="true">Um site que some!</h2>
   <p contenteditable="true">Edite cores clicando no botão 🎨.</p>
 
-  <div class="icons">
-    <a href="https://wa.me/5535999792207" target="_blank"><i class="fab fa-whatsapp" id="iconWhats"></i></a>
-    <a href="https://www.instagram.com/luangoulartdesp" target="_blank"><i class="fab fa-instagram" id="iconInsta"></i></a>
-    <a href="https://www.facebook.com/despachanteluangoulart/about" target="_blank"><i class="fab fa-facebook" id="iconFace"></i></a>
-    <a href="https://www.linkedin.com/in/luan-goulart-8b4b9820b/" target="_blank"><i class="fab fa-linkedin" id="iconLinkedin"></i></a>
-    <a href="mailto:luangoulartdesp@hotmail.com"><i class="fas fa-envelope" style="color: #020205;"></i></a>
-  </div>
+  <!-- Ícones sociais -->
+<div class="icons">
+  <a href="https://wa.me/5535999792207" target="_blank"><i class="fab fa-whatsapp" id="iconWhats"></i></a>
+  <a href="https://www.instagram.com/luangoulartdesp" target="_blank"><i class="fab fa-instagram" id="iconInsta"></i></a>
+  <a href="https://www.facebook.com/despachanteluangoulart/about" target="_blank"><i class="fab fa-facebook" id="iconFace"></i></a>
+  <a href="https://www.linkedin.com/in/luan-goulart-8b4b9820b/" target="_blank"><i class="fab fa-linkedin" id="iconLinkedin"></i></a>
+  <a href="mailto:luangoulartdesp@hotmail.com"><i class="fas fa-envelope" style="color:#000;"></i></a>
 </div>
 
+<!-- Botão logo abaixo dos ícones -->
+<button class="contato-btn-mobile" onclick="salvarTodosContatosNoCelular()">📇 Salvar Contatos</button>
+
+
 <button class="pix-btn" onclick="copiarPixAutomatico()">📋 Pix</button>
-<button class="contato-btn" 
-if(isMobile){
-  <span id="instrucoesContato">
-    <strong>Contato baixado!</strong><br><br>
-  </span>
-else} onclick="salvarTodosContatosNoCelular()">📇 Salvar Contato</button>
 
 <span id="copiedMsg">Copiado!</span>
 
@@ -187,7 +207,7 @@ function salvarTodosContatosNoCelular() {
 
   if (!isMobile) {
     alert("Essa função só funciona em celulares.");
-    
+    btsa
     return;
   }
 
