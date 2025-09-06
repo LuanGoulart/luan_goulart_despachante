@@ -57,17 +57,19 @@
   /* Botão Salvar Contatos só no celular */
 .contato-btn-mobile {
   display: none; /* escondido por padrão */
-  margin-top: 20px;
+  margin: 20px auto; /* centraliza horizontalmente */
   background: linear-gradient(135deg, #4facfe, #00f2fe);
   border: none;
   border-radius: 50px;
   color: white;
   font-weight: bold;
   padding: 12px 20px;
+  text-align: center;
   cursor: pointer;
-  font-size: 16px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  /* opcional: transforma em bloco para centralizar com margin auto */
+  display: block;
 }
+
 
 /* Exibe apenas em telas até 767px (celulares) */
 @media (max-width: 767px) {
