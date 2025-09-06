@@ -14,42 +14,16 @@
     text-align: center;
     transition: all 0.3s ease;
   }
-  /* Feed de imagens */
-  .instagram-feed {
-    width: 80%;
-    max-width: 400px;
-    height: 300px;
-    margin: 20px auto;
-    overflow: hidden;
-    position: relative;
-    border-radius: 10px;
-  }
 
-  .instagram-feed img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-    top: 0; left: 0;
-    opacity: 0;
-    transition: opacity 1s ease-in-out;
-  }
-
-  .instagram-feed img.active {
-    opacity: 1;
-  }
-
-  @media (max-width: 500px) {
-    .instagram-feed { height: 250px; }
-    .icons { font-size: 28px; }
-  }
-  
   .content { padding: 50px 20px; }
-  .icons { font-size: 35px; margin: 20px 0; }
-  .icons a { margin: 0 15px; text-decoration: none; transition: color 0.3s ease; }
   h1,h2,p { cursor: text; }
   h2 { margin-top: 40px; font-size: 24px; font-weight: normal; color: #ddd; }
 
+  /* Ícones sociais */
+  .icons { font-size: 35px; margin: 20px 0; }
+  .icons a { margin: 0 15px; text-decoration: none; transition: color 0.3s ease; }
+
+  /* Botões Pix e Contato */
   .pix-btn, .contato-btn {
     position: fixed;
     bottom: 20px;
@@ -83,31 +57,34 @@
     background: #fff; color: #000; border: none; padding: 5px 10px;
     border-radius: 5px; cursor: pointer; margin-top: 10px;
   }
+
   /* Botão Salvar Contatos só no celular */
-.contato-btn-mobile {
-  display: none; /* escondido por padrão */
-  margin: 20px auto; /* centraliza horizontalmente */
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
-  border: none;
-  border-radius: 50px;
-  color: white;
-  font-weight: bold;
-  padding: 12px 20px;
-  text-align: center;
-  cursor: pointer;
-  /* opcional: transforma em bloco para centralizar com margin auto */
-  display: block;
-}
-
-
-/* Exibe apenas em telas até 767px (celulares) */
-@media (max-width: 767px) {
   .contato-btn-mobile {
-    display: inline-block;
+    display: none;
+    margin: 20px auto;
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+    padding: 12px 20px;
+    text-align: center;
+    cursor: pointer;
+    display: block;
   }
-}
+  @media (max-width: 767px) { .contato-btn-mobile { display: inline-block; } }
 
-
+  /* LightWidget personalizado */
+  .lightwidget-wrapper iframe {
+    width: 100%;
+    max-width: 400px;
+    height: 400px;
+    border: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    margin: 20px auto;
+    display: block;
+  }
 
   .menu-toggle {
     position: fixed; bottom: 80px; right: 20px; background: rgba(0,0,0,0.7);
@@ -131,35 +108,27 @@
 
 <div class="content">
   <h1 contenteditable="true">Luan Goulart Despachante</h1>
-  <!--<h2 contenteditable="true">Redes sociais e contatos</h2>-->
   <p contenteditable="true">Entre em contato via WhatsApp, Instagram ou Facebook!</p>
 
   <!-- Ícones sociais -->
-<div class="icons">
-  <a href="https://wa.me/5535999792207" target="_blank"><i class="fab fa-whatsapp" id="iconWhats"></i></a>
-  <a href="https://www.instagram.com/luangoulartdesp" target="_blank"><i class="fab fa-instagram" id="iconInsta"></i></a>
-  <a href="https://www.facebook.com/despachanteluangoulart/about" target="_blank"><i class="fab fa-facebook" id="iconFace"></i></a>
-  <a href="mailto:luangoulartdesp@hotmail.com"><i class="fas fa-envelope" style="color:#000;"></i></a>
+  <div class="icons">
+    <a href="https://wa.me/5535999792207" target="_blank"><i class="fab fa-whatsapp" id="iconWhats"></i></a>
+    <a href="https://www.instagram.com/luangoulartdesp" target="_blank"><i class="fab fa-instagram" id="iconInsta"></i></a>
+    <a href="https://www.facebook.com/despachanteluangoulart/about" target="_blank"><i class="fab fa-facebook" id="iconFace"></i></a>
+    <a href="mailto:luangoulartdesp@hotmail.com"><i class="fas fa-envelope" style="color:#000;"></i></a>
+  </div>
+
+  <!-- Botão Salvar Contato no celular -->
+  <button class="contato-btn-mobile" onclick="salvarTodosContatosNoCelular()">📇 Salvar Contatos</button>
+
+  <!-- LightWidget -->
+  <div class="lightwidget-wrapper">
+    <iframe src="//lightwidget.com/widgets/e4723e6c3d935ecc9454d86a54559098.html"
+        scrolling="no" allowtransparency="true" style="width: 50%;"></iframe>
+  </div>
 </div>
 
-<!-- Botão logo abaixo dos ícones -->
-<button class="contato-btn-mobile" onclick="salvarTodosContatosNoCelular()">📇 Salvar Contatos</button>
-
-
-<script>
-const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-const btn = document.querySelector(".contato-btn-mobile");
-
-if (isMobile) {
-  btn.style.display = "block";
-} else {
-  btn.style.display = "none";
-}
-</script>
-</body>
-
-
-
+<!-- Botão Pix -->
 <button class="pix-btn" onclick="copiarPixAutomatico()">📋 Pix</button>
 
 <span id="copiedMsg">Copiado!</span>
@@ -172,20 +141,7 @@ if (isMobile) {
   <button onclick="fecharInstrucoes()">Fechar</button>
 </div>
 
-
- <h2>📷 Meu Instagram</h2>
-    <iframe 
-      src="https://snapwidget.com/embed/1107129" 
-      class="snapwidget-widget" 
-      allowtransparency="true" 
-      frameborder="0" 
-      scrolling="no" 
-      style="border:none; overflow:hidden; width:100%; max-width:400px; height: 400px;; 
-      border-radius:50px;" 
-      title="Posts from Instagram">
-    </iframe>
-
-
+<!-- Menu cores -->
 <div class="menu-toggle" onclick="toggleMenu()">🎨</div>
 <div class="color-menu" id="colorMenu">
   <div class="color-item"><input type="color" id="bgColor1"/><span>Fundo 1</span></div>
@@ -198,6 +154,12 @@ if (isMobile) {
 </div>
 
 <script>
+/* Botão mobile */
+const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+const btn = document.querySelector(".contato-btn-mobile");
+if (isMobile) btn.style.display = "block"; else btn.style.display = "none";
+
+/* Funções cores */
 const colorMenu = document.getElementById("colorMenu");
 const bg1 = document.getElementById("bgColor1");
 const bg2 = document.getElementById("bgColor2");
@@ -205,11 +167,9 @@ const textInput = document.getElementById("textColor");
 const iconWhatsColor = document.getElementById("iconWhatsColor");
 const iconInstaColor = document.getElementById("iconInstaColor");
 const iconFaceColor = document.getElementById("iconFaceColor");
-
 const iconWhats = document.getElementById("iconWhats");
 const iconInsta = document.getElementById("iconInsta");
 const iconFace = document.getElementById("iconFace");
-
 const defaultColors = {
   bg1:"#4facfe", bg2:"#00f2fe", text:"#ffffff",
   iconWhats:"#25D366", iconInsta:"#E1306C", iconFace:"#1877F2"
@@ -256,31 +216,16 @@ function saveColors() {
 
 window.onload = setInputsToCurrent;
 
+/* Pix */
 function copiarPixAutomatico() {
   try { navigator.clipboard.writeText("35 99979-2207").then(()=>{ const msg=document.getElementById("copiedMsg"); msg.style.display="inline"; setTimeout(()=>{msg.style.display="none";},2000); }).catch(()=>{ alert("Copie manualmente: 35 99979-2207"); }); } 
   catch { alert("Copie manualmente: 35 99979-2207"); }
 }
 
-
+/* Contato vCard */
 function salvarTodosContatosNoCelular() {
-  const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
-  if (!isMobile) {
-    alert("Essa função só funciona em celulares.");
-    return;
-  }
-
-  try {
-    // Opção de compartilhar URL (apenas em mobile com Web Share suportado)
-  /*if (navigator.share) {
-    navigator.share({
-      title: "Luan Goulart Despachante",
-      text: "Entre em contato via WhatsApp, Instagram ou Facebook!",
-      url: window.location.href
-    }).catch(err => console.log("Erro ao compartilhar:", err));
-  }*/
-
-  // Criar vCard para salvar contatos
-    const vCard = `BEGIN:VCARD
+  if (!isMobile) { alert("Essa função só funciona em celulares."); return; }
+  const vCard = `BEGIN:VCARD
 VERSION:3.0
 FN:Luan Goulart Despachante
 TEL;TYPE=CELL,VOICE;X-ABLabel=WhatsApp:+5535999792207
@@ -290,23 +235,20 @@ URL;TYPE=WORK,Instagram:https://www.instagram.com/luangoulartdesp
 URL;TYPE=WORK,Facebook:https://www.facebook.com/despachanteluangoulart/about
 ORG:Despachante Luan Goulart
 END:VCARD`;
-
-    const blob = new Blob([vCard], { type: "text/vcard;charset=utf-8" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = "luan_goulart_contato.vcf";
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    URL.revokeObjectURL(url);
-
-    alert("Arquivo vCard baixado! Abra no celular para salvar o contato.");
-  } catch (err) {
-    console.error(err);
-    alert("Não foi possível salvar o contato automaticamente.");
-  }
+  const blob = new Blob([vCard], { type: "text/vcard;charset=utf-8" });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement("a");
+  a.href = url;
+  a.download = "luan_goulart_contato.vcf";
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+  alert("Arquivo vCard baixado! Abra no celular para salvar o contato.");
 }
+
+/* Fechar instruções contato */
+function fecharInstrucoes(){ document.getElementById("instrucoesContato").style.display="none"; }
 </script>
 
 </body>
