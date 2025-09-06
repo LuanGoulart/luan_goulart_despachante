@@ -14,6 +14,7 @@
     text-align: center;
     transition: all 0.3s ease;
   }
+  
   .content { padding: 50px 20px; }
   .icons { font-size: 35px; margin: 20px 0; }
   .icons a { margin: 0 15px; text-decoration: none; transition: color 0.3s ease; }
@@ -54,20 +55,28 @@
     border-radius: 5px; cursor: pointer; margin-top: 10px;
   }
   /* Botão Salvar Contatos só no celular */
-    .contato-btn-mobile {
-      display: none; /* escondido por padrão */
-      margin-top: 20px;
-      background: linear-gradient(135deg, #4facfe, #00f2fe);
-      border: none;
-      border-radius: 50px;
-      color: white;
-      font-weight: bold;
-      padding: 12px 20px;
-      cursor: pointer;
-      font-size: 16px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-    }
-    
+.contato-btn-mobile {
+  display: none; /* escondido por padrão */
+  margin-top: 20px;
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-weight: bold;
+  padding: 12px 20px;
+  cursor: pointer;
+  font-size: 16px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+/* Exibe apenas em telas até 767px (celulares) */
+@media (max-width: 767px) {
+  .contato-btn-mobile {
+    display: inline-block;
+  }
+}
+
+
 
   .menu-toggle {
     position: fixed; bottom: 80px; right: 20px; background: rgba(0,0,0,0.7);
@@ -105,6 +114,18 @@
 
 <!-- Botão logo abaixo dos ícones -->
 <button class="contato-btn-mobile" onclick="salvarTodosContatosNoCelular()">📇 Salvar Contatos</button>
+
+<script>
+const isMobile = /Android|iPhone|iPad|iPod/i.test(navigator.userAgent);
+const btn = document.querySelector(".contato-btn-mobile");
+
+if (isMobile) {
+  btn.style.display = "block";
+} else {
+  btn.style.display = "none";
+}
+</script>
+</body>
 
 
 <button class="pix-btn" onclick="copiarPixAutomatico()">📋 Pix</button>
