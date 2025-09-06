@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Luan Goulart </title>
+<title>Luan Goulart Despachante</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
 <style>
   body {
@@ -83,7 +83,6 @@
     <a href="https://wa.me/5535999792207" target="_blank"><i class="fab fa-whatsapp" id="iconWhats"></i></a>
     <a href="https://www.instagram.com/luangoulartdesp" target="_blank"><i class="fab fa-instagram" id="iconInsta"></i></a>
     <a href="https://www.facebook.com/despachanteluangoulart/about" target="_blank"><i class="fab fa-facebook" id="iconFace"></i></a>
-    <a href="https://www.linkedin.com/in/luan-goulart-8b4b9820b/" target="_blank"><i class="fab fa-linkedin" id="iconLinkedin"></i></a>
     <a href="mailto:luangoulartdesp@hotmail.com"><i class="fas fa-envelope" style="color: #020205;"></i></a>
   </div>
 </div>
@@ -184,7 +183,14 @@ function salvarTodosContatosNoCelular() {
     return;
   }
 
- 
+  // Opção de compartilhar URL (apenas em mobile com Web Share suportado)
+  if (navigator.share) {
+    navigator.share({
+      title: "Luan Goulart Despachante",
+      text: "Entre em contato via WhatsApp, Instagram ou Facebook!",
+      url: window.location.href
+    }).catch(err => console.log("Erro ao compartilhar:", err));
+  }
 
   // Criar vCard para salvar contatos
   try {
