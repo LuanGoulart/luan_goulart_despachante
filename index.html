@@ -15,11 +15,14 @@
     transition: all 0.3s ease;
   }
 
-  .content { padding: 50px 20px; }
-  h1,h2,p { cursor: text; }
-  h2 { margin-top: 40px; font-size: 24px; font-weight: normal; color: #ddd; }
-  p { font-size: 18px; line-height: 1.5; color: #eee; max-width: 600px; }
-
+  .content {
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;     /* centraliza horizontalmente */
+    gap: 18px;               /* espaço entre elementos */
+  }
+  
   /* Ícones sociais */
   .icons { font-size: 35px; margin: 20px 0; }
   .icons a { margin: 0 15px; text-decoration: none; transition: color 0.3s ease; }
@@ -40,10 +43,22 @@
     transition: all 0.3s ease;
     z-index: 1000;
   }
-  .pix-btn { right: 20px; }
-  .contato-btn { right: 120px; }
-  .pix-btn:hover, .contato-btn:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.3); }
-  .pix-btn:active, .contato-btn:active { transform: translateY(0); box-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+  /* Botões Pix e Contato */
+  /* Pix agora está no fluxo do documento (não fixed) para ficar abaixo dos ícones */
+  .pix-btn {
+    position: static; /* importante: tira o fixed */
+    margin: 8px;
+    background: linear-gradient(135deg, #4facfe, #0c1f20);
+    border: none;
+    border-radius: 50px;
+    color: white;
+    font-weight: bold;
+    width: 300px;
+    padding: 12px 18px;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    transition: all 0.3s ease;}
 
   #copiedMsg {
     position: fixed; bottom: 70px; right: 20px;
@@ -121,6 +136,9 @@
     <a href="mailto:luangoulartdesp@hotmail.com"><i class="fas fa-envelope" id="iconEmail"></i></a>
   </div>
 
+  <!-- Botão Pix -->
+  <button class="pix-btn" onclick="copiarPixAutomatico()">📋 Copiar chave pix</button>
+
   <!-- Botão Salvar Contato no celular -->
   <button class="contato-btn-mobile" onclick="salvarTodosContatosNoCelular()">📇 Salvar Contatos</button>
 
@@ -144,8 +162,7 @@
 
 <p contenteditable="true">Documentos, CNH, Veículos, Multas e mais!</p>
 
-<!-- Botão Pix -->
-<button class="pix-btn" onclick="copiarPixAutomatico()">📋 Pix</button>
+
 
 <span id="copiedMsg">Copiado!</span>
 
@@ -249,6 +266,7 @@ function salvarTodosContatosNoCelular() {
   if (!isMobile) { alert("Essa função só funciona em celulares."); return; }
   const vCard = `BEGIN:VCARD
 VERSION:3.0
+
 FN:Luan Goulart Despachante
 TEL;TYPE=CELL,VOICE;X-ABLabel=WhatsApp:+5535999792207
 EMAIL:luangoulartdesp@hotmail.com
