@@ -1,97 +1,255 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Luan Goulart Despachante</title>
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="index.css" />
-  </head>
-  <body>
-    <div class="content">
-      <!-- <img src="imagens/logo_Despachante.jpg" alt="Logo" style="width: 250px; height: 200px;padding: auto; margin: 20px;"> -->
-      <h1 contenteditable="true">Luan Goulart Despachante</h1>
-      <p contenteditable="true">
-        Entre em contato via WhatsApp, Instagram, Facebook ou E-mail!
-      </p>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Luan Goulart Despachante</title>
+  
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+  />
 
-      <!-- Ícones sociais -->
-      <div class="icons">
-        <a href="https://wa.me/5535999792207" target="_blank"
-          ><i class="fab fa-whatsapp" id="iconWhats"></i
-        ></a>
-        <a href="https://www.instagram.com/luangoulartdesp" target="_blank"
-          ><i class="fab fa-instagram" id="iconInsta"></i
-        ></a>
-        <a
-          href="https://www.facebook.com/despachanteluangoulart/about"
-          target="_blank"
-          ><i class="fab fa-facebook" id="iconFace"></i
-        ></a>
-        <a href="mailto:luangoulartdesp@hotmail.com"
-          ><i class="fas fa-envelope" id="iconEmail"></i
-        ></a>
-      </div>
+  <!-- CSS -->
+  <link rel="stylesheet" href="index.css" />
 
-      <!-- Botão Pix -->
-      <button class="pix-btn" onclick="copiarPixAutomatico()">
-        📋 Copiar chave pix
-      </button>
+  <style>
+    /* --- Reset básico e responsividade --- */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      padding: 10px;
+    }
 
-      <!-- Mensagem de copiado -->
-      <span id="copiedMsg">Chave pix copiada!</span>
+    h1, p {
+      margin: 10px 0;
+    }
 
-      <!-- Botão Salvar Contato no celular -->
-      <button
-        class="contato-btn-mobile"
-        onclick="salvarTodosContatosNoCelular()"
-      >
-        📇 Salvar Contatos
-      </button>
+    /* --- Ícones sociais --- */
+    .icons {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 15px 0;
+      flex-wrap: wrap;
+    }
 
-      <!-- SnapWidget -->
-      <div
-        style="
-          position: relative;
-          width: 250px;
-          max-width: 250px;
-          image-rendering: pixelated;
-          margin: 20px auto;
-          border: 2px solid #6576f7;
-          border-radius: 20px;
-          overflow: hidden;
-        "
-      >
-        <iframe
-          src="https://snapwidget.com/embed/1107129"
-          class="snapwidget-widget"
-          allowtransparency="true"
-          frameborder="0"
-          scrolling="no"
-          style="border: none; overflow: auto; width: 250px; height: 250px"
-          title="Posts do Instagram"
-        ></iframe>
+    .icons i {
+      font-size: 2.3rem;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
 
-        <!-- Camada invisível que bloqueia clique -->
-        <div
-          style="
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 10;
-          "
-        ></div>
-      </div>
-      <script src="https://snapwidget.com/js/snapwidget.js"></script>
+    .icons i:hover {
+      transform: scale(1.2);
+    }
+
+    /* --- Botões --- */
+    .pix-btn, .contato-btn-mobile {
+      display: inline-block;
+      margin: 10px 5px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+
+    .pix-btn {
+      background: linear-gradient(135deg, #4facfe, #00f2fe);
+      color: white;
+    }
+
+    .pix-btn:hover {
+      transform: scale(1.05);
+    }
+
+    .contato-btn-mobile {
+      background: linear-gradient(135deg, #f093fb, #f5576c);
+      color: white;
+    }
+
+    .contato-btn-mobile:hover {
+      transform: scale(1.05);
+    }
+
+    /* --- Mensagem copiada --- */
+    #copiedMsg {
+      display: none;
+      color: rgb(230, 218, 54);
+      font-weight: bold;
+      margin-top: 5px;
+    }
+
+    /* --- SnapWidget container --- */
+    .snap-container {
+      position: relative;
+      width: 250px;
+      max-width: 100%;
+      margin: 20px auto;
+      border: 2px solid #6576f7;
+      border-radius: 20px;
+      overflow: hidden;
+    }
+
+    .snap-container iframe {
+      width: 100%;
+      height: 250px;
+      border: none;
+      overflow: hidden;
+    }
+
+    /* Camada bloqueio clique */
+    .snap-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 10;
+    }
+
+    /* --- Instruções contato --- */
+    #instrucoesContato {
+      display: none;
+      background: #fff;
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      margin: 20px 0;
+      max-width: 350px;
+      text-align: left;
+    }
+
+    #instrucoesContato button {
+      margin-top: 10px;
+      padding: 5px 10px;
+      border-radius: 8px;
+      border: none;
+      cursor: pointer;
+      background: #6576f7;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* --- Menu cores --- */
+    .menu-toggle {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #6576f7;
+      color: white;
+      padding: 10px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.5rem;
+      z-index: 1000;
+    }
+
+    .color-menu {
+      position: fixed;
+      bottom: 70px;
+      right: 20px;
+      background: #242424;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.2);
+      padding: 10px;
+      display: none;
+      z-index: 1000;
+      width: 150px;
+    }
+
+    .color-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: 5px 0;
+    }
+
+    .color-item input[type="color"] {
+      cursor: pointer;
+    }
+
+    .reset-btn {
+      margin-top: 10px;
+      width: 100%;
+      padding: 5px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      background: #6576f7;
+      color: white;
+      font-weight: bold;
+    }
+
+    /* --- Responsividade --- */
+    @media (max-width: 480px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .icons i {
+        font-size: 1.5rem;
+      }
+
+      .pix-btn, .contato-btn-mobile {
+        width: 90%;
+      }
+
+      .snap-container iframe {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <h1 contenteditable="true">Luan Goulart Despachante</h1>
+    <p contenteditable="true">Entre em contato via WhatsApp, Instagram, Facebook ou E-mail!</p>
+
+    <!-- Ícones sociais -->
+    <div class="icons">
+      <a href="https://wa.me/5535999792207" target="_blank">
+        <i class="fab fa-whatsapp" id="iconWhats"></i>
+      </a>
+      <a href="https://www.instagram.com/luangoulartdesp" target="_blank">
+        <i class="fab fa-instagram" id="iconInsta"></i>
+      </a>
+      <a href="https://www.facebook.com/despachanteluangoulart/about" target="_blank">
+        <i class="fab fa-facebook" id="iconFace"></i>
+      </a>
+      <a href="mailto:luangoulartdesp@hotmail.com">
+        <i class="fas fa-envelope" id="iconEmail"></i>
+      </a>
+    </div>
+
+    <!-- Botões -->
+    <button class="pix-btn" onclick="copiarPixAutomatico()">📋 Copiar chave pix</button>
+    <span id="copiedMsg">Chave pix copiada!</span>
+    <button class="contato-btn-mobile" onclick="salvarTodosContatosNoCelular()">📇 Salvar Contatos</button>
+
+    <!-- SnapWidget -->
+    <div class="snap-container">
+      <iframe
+        src="https://snapwidget.com/embed/1107129"
+        allowtransparency="true"
+        scrolling="no"
+        title="Posts do Instagram"
+      ></iframe>
+      <div class="snap-overlay"></div>
     </div>
 
     <p contenteditable="true">Documentos, CNH, Veículos, Multas e mais!</p>
 
+    <!-- Instruções contato -->
     <div id="instrucoesContato">
       <strong>Contato baixado!</strong><br /><br />
       📱 No celular, toque no arquivo baixado<br />
@@ -103,30 +261,19 @@
     <!-- Menu cores -->
     <div class="menu-toggle" onclick="toggleMenu()">🎨</div>
     <div class="color-menu" id="colorMenu">
-      <div class="color-item">
-        <input type="color" id="bgColor1" /><span>Fundo 1</span>
-      </div>
-      <div class="color-item">
-        <input type="color" id="bgColor2" /><span>Fundo 2</span>
-      </div>
-      <div class="color-item">
-        <input type="color" id="textColor" /><span>Texto</span>
-      </div>
-      <div class="color-item">
-        <input type="color" id="iconWhatsColor" /><span>WhatsApp</span>
-      </div>
-      <div class="color-item">
-        <input type="color" id="iconInstaColor" /><span>Instagram</span>
-      </div>
-      <div class="color-item">
-        <input type="color" id="iconFaceColor" /><span>Facebook</span>
-      </div>
-      <div class="color-item">
-        <input type="color" id="iconEmailColor" /><span>Email</span>
-      </div>
+      <div class="color-item"><input type="color" id="bgColor1" /><span>Fundo 1</span></div>
+      <div class="color-item"><input type="color" id="bgColor2" /><span>Fundo 2</span></div>
+      <div class="color-item"><input type="color" id="textColor" /><span>Texto</span></div>
+      <div class="color-item"><input type="color" id="iconWhatsColor" /><span>WhatsApp</span></div>
+      <div class="color-item"><input type="color" id="iconInstaColor" /><span>Instagram</span></div>
+      <div class="color-item"><input type="color" id="iconFaceColor" /><span>Facebook</span></div>
+      <div class="color-item"><input type="color" id="iconEmailColor" /><span>Email</span></div>
       <button class="reset-btn" onclick="resetColors()">Reset</button>
     </div>
+  </div>
 
-    <script src="index.js"></script>
-  </body>
+  <!-- Scripts -->
+  <script src="https://snapwidget.com/js/snapwidget.js"></script>
+  <script src="index.js"></script>
+</body>
 </html>
