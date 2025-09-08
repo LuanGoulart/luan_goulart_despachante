@@ -132,8 +132,8 @@ h1 {
 .menu-toggle {
     position: fixed;
     bottom: 80px;
-    right: 20px;
-    background: rgba(0,0,0,0.7);
+    right: 40px;
+    background: rgba(83, 48, 221, 0.7);
     color: white;
     padding: 12px 14px;
     border-radius: 50%;
@@ -147,7 +147,7 @@ h1 {
     position: fixed;
     bottom: 130px;
     right: 20px;
-    background: rgba(0,0,0,0.85);
+    background: rgba(83, 83, 83, 0.85);
     padding: 10px;
     border-radius: 15px;
     display: none;
@@ -171,7 +171,7 @@ h1 {
     padding: 0;
 }
 .reset-btn {
-    background: #555;
+    background: hsl(233, 81%, 60%);
     border: none;
     border-radius: 10px;
     color: white;
