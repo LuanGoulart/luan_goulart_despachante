@@ -21,7 +21,6 @@ h1 {
     align-items: center;
     gap: 18px;
 }
-/* Ícones sociais */
 .icons {
     font-size: 35px;
     margin: 20px 0;
@@ -31,7 +30,6 @@ h1 {
     text-decoration: none;
     transition: color 0.3s ease;
 }
-/* Botões Pix e Contato */
 .pix-btn {
     position: static;
     margin: 8px;
@@ -79,8 +77,8 @@ h1 {
     cursor: pointer;
     margin-top: 10px;
 }
-/* Botão Salvar Contatos só no celular */
 .contato-btn-mobile {
+    display: none;
     margin: 20px auto;
     background: linear-gradient(135deg, #789fc1, #00f2fe);
     border: none;
@@ -90,12 +88,20 @@ h1 {
     padding: 12px 20px;
     text-align: center;
     cursor: pointer;
-    display: none;
 }
 @media (max-width: 767px) {
     .contato-btn-mobile { display: inline-block; }
 }
-/* SnapWidget */
+.lightwidget-wrapper iframe {
+    width: 100%;
+    min-width: 320px;
+    max-width: 400px;
+    height: 400px;
+    border: 0;
+    overflow: hidden;
+    border-radius: 20px;
+    display: block;
+}
 .snap-container {
     position: relative;
     width: 300px;
@@ -119,7 +125,6 @@ h1 {
     height:100%;
     z-index:10;
 }
-/* Menu cores */
 .menu-toggle {
     position: fixed;
     bottom: 80px;
