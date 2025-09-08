@@ -75,7 +75,6 @@ h1 {
     color: #000;
     border: none;
     padding: 5px 10px;
-    width: 300px;
     font-weight: bold;
     border-radius: 5px;
     cursor: pointer;
@@ -88,6 +87,8 @@ h1 {
     border: none;
     border-radius: 50px;
     color: white;
+    color: rgb(0, 0, 0);
+    width: 300px;
     font-weight: bold;
     padding: 12px 20px;
     text-align: center;
@@ -181,4 +182,5 @@ h1 {
     font-size: 12px;
 }
 .reset-btn:hover { background: #777; }
+
 
