@@ -119,6 +119,7 @@ h1 {
   width: 100%;
   height: 100%; /* Preenche todo o container */
   border: none;
+  aspect-ratio: 1 / 1; /* Mantém quadrado perfeito */
   border-radius: 20px;
   display: block;
 }
@@ -212,4 +213,5 @@ h1 {
     aspect-ratio: 1 / 1;
   }
 }
+
 
