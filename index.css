@@ -96,9 +96,9 @@ h1 {
 /* === SnapWidget === */
 .lightwidget-wrapper iframe {
   width: 100%;
-  min-width: 320px;
-  max-width: 400px;
-  height: 400px;
+  min-width: 300px;
+  
+  height: 100%;
   border: 0;
   overflow: hidden;
   border-radius: 20px;
@@ -108,24 +108,29 @@ h1 {
   position: relative;
   width: 300px;
   max-width: 300px;
+  aspect-ratio: 1 / 1; /* Mantém quadrado perfeito */
   margin: 20px auto;
   border: 2px solid #6576f7;
   border-radius: 20px;
   overflow: hidden;
 }
+
 .snap-container iframe {
   width: 100%;
-  height: 300px;
+  height: 100%; /* Preenche todo o container */
   border: none;
-  overflow: auto;
+  border-radius: 20px;
+  display: block;
 }
-.overlay-block {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 10;
+
+.snap-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 300px;
+        height: 100%;
+        z-index: 10;
+        color: #00f2fe;
 }
 
 /* === Menu cores === */
@@ -184,48 +189,27 @@ h1 {
   background: #777;
 }
 
-/* === Responsividade === */
+/* Celular */
+@media (max-width: 480px) {
+  .snap-container {
+    width: 90%;
+    aspect-ratio: 1 / 1;
+  }
+}
+
+/* Tablet */
 @media (min-width: 481px) and (max-width: 1024px) {
-  h1 {
-    font-size: 2.2rem;
-  }
-  .icons {
-    font-size: 2rem;
-  }
-  .pix-btn,
-  .contato-btn-mobile {
-    padding: 12px 28px;
-    font-size: 1.1rem;
-  }
-  .snap-container iframe {
-    height: 300px;
+  .snap-container {
+    width: 300px;
+    aspect-ratio: 1 / 1;
   }
 }
+
+/* Desktop */
 @media (min-width: 1025px) {
-  body {
-    max-width: 1000px;
-    margin: 0 auto;
-  }
-  h1 {
-    font-size: 2.5rem;
-  }
-  p {
-    font-size: 1.2rem;
-  }
-  .icons {
-    font-size: 2.2rem;
-    margin: 0 10px;
-  }
-  .pix-btn,
-  .contato-btn-mobile {
-    padding: 14px 32px;
-    font-size: 1.1rem;
-  }
-  ul {
-    font-size: 18px;
-    line-height: 1.6;
-  }
-  .snap-container iframe {
-    height: 350px;
+  .snap-container {
+    width: 400px;
+    aspect-ratio: 1 / 1;
   }
 }
+
