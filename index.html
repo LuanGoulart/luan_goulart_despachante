@@ -5,15 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Luan Goulart Despachante</title>
 
-    <!-- Font Awesome -->
+    <!-- Preconnect para melhorar conexões externas -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
+    <link rel="preconnect" href="https://snapwidget.com" crossorigin />
+
+    <!-- Preload e fallback do CSS -->
     <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      rel="preload"
+      href="index.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
     />
+    <noscript><link rel="stylesheet" href="index.css" /></noscript>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="index.css" />
-
+    <!-- Preload e fallback do Font Awesome -->
+    <link
+      rel="preload"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      as="style"
+      onload="this.onload=null;this.rel='stylesheet'"
+    />
+    <noscript>
+      <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      />
+    </noscript>
     <style>
       /* --- Reset básico e responsividade --- */
       body {
@@ -75,7 +92,7 @@
       }
 
       .pix-btn {
-        background: linear-gradient(135deg, #4facfe, #00f2fe);
+        background: linear-gradient(135deg, #000000, #00f2fe);
         color: white;
       }
 
@@ -169,7 +186,6 @@
         position: fixed;
         bottom: 70px;
         right: 20px;
-        background: #a24747;
         border-radius: 10px;
         box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
         padding: 10px;
@@ -319,7 +335,7 @@
     </div>
 
     <!-- Scripts -->
-    <script src="https://snapwidget.com/js/snapwidget.js"></script>
-    <script src="index.js"></script>
+    <script src="https://snapwidget.com/js/snapwidget.js" defer></script>
+    <script src="index.js" defer></script>
   </body>
 </html>
