@@ -116,7 +116,7 @@ h1 {
 }
 
 .snap-container iframe {
-  width: 100%;
+  width: 300px;
   height: 100%; /* Preenche todo o container */
   border: none;
   aspect-ratio: 1 / 1; /* Mantém quadrado perfeito */
@@ -213,5 +213,6 @@ h1 {
     aspect-ratio: 1 / 1;
   }
 }
+
 
 
