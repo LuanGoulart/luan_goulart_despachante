@@ -1,222 +1,255 @@
-/* === Base === */
+/* ============================
+   Reset básico e corpo
+============================ */
 body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: black;
-  color: white;
-  text-align: center;
-  transition: all 0.3s ease;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: black;
+    color: white;
+    text-align: center;
+    transition: all 0.3s ease;
 }
+
 h1, h2, p {
-  transition: color 0.3s ease;
+    transition: color 0.3s ease;
 }
+
 h1 {
-  font-size: 28px;
-  font-weight: bold;
+    font-size: 28px;
+    font-weight: bold;
 }
+
 .content {
-  padding: 50px 20px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
+    padding: 50px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
 }
 
-/* === Ícones sociais === */
+/* ============================
+   Ícones sociais
+============================ */
 .icons {
-  font-size: 35px;
-  margin: 20px 0;
-}
-.icons a {
-  margin: 0 15px;
-  text-decoration: none;
-  transition: color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
 }
 
-/* === Botões === */
+.icons i {
+    font-size: 35px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.icons i:hover {
+    transform: scale(1.2);
+}
+
+/* ============================
+   Botões Pix e Contato
+============================ */
 .pix-btn,
 .contato-btn-mobile {
-  width: 300px;
-  padding: 12px 18px;
-  font-weight: bold;
-  border: none;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  color: white;
-  border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+    font-weight: bold;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
+
 .pix-btn {
-  background: linear-gradient(135deg, #4facfe, #0c1f20);
-  margin: 8px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    background: linear-gradient(135deg, #4facfe, #0c1f20);
+    width: 300px;
+    padding: 12px 18px;
+    font-size: 16px;
+    margin: 8px 0;
 }
+
+.pix-btn:hover {
+    transform: scale(1.05);
+}
+
 .contato-btn-mobile {
-  display: none;
-  margin: 20px auto;
-  background: linear-gradient(135deg, #789fc1, #00f2fe);
-  border-radius: 50px;
-  text-align: center;
+    display: none;
+    background: linear-gradient(135deg, #789fc1, #00f2fe);
+    width: 300px;
+    padding: 12px 20px;
+    font-size: 16px;
+    margin: 10px 0;
 }
 
-/* === Mensagens e instruções === */
+/* ============================
+   Mensagem copiada
+============================ */
 #copiedMsg {
-  display: none;
-  color: rgb(47, 223, 24);
-  font-weight: bold;
-  margin-top: 10px;
-  font-size: 16px;
-}
-#instrucoesContato {
-  display: none;
-  position: fixed;
-  bottom: 100px;
-  right: 20px;
-  background: #000000cc;
-  color: #fff;
-  padding: 15px;
-  border-radius: 10px;
-  font-size: 14px;
-  z-index: 1002;
-  max-width: 250px;
-  text-align: left;
-}
-#instrucoesContato button {
-  background: #fff;
-  color: #000;
-  border: none;
-  font-weight: bold;
-  padding: 5px 10px;
-  border-radius: 5px;
-  cursor: pointer;
-  margin-top: 10px;
+    display: none;
+    color: rgb(47, 223, 24);
+    font-weight: bold;
+    margin-top: 10px;
+    font-size: 16px;
+    text-align: center;
 }
 
-/* === SnapWidget === */
-.lightwidget-wrapper iframe {
-  width: 100%;
-  min-width: 300px;
-  height: 100%;
-  aspect-ratio: 1 / 1; /* Mantém quadrado perfeito */
-  border: 0;
-  overflow: hidden;
-  border-radius: 20px;
-  display: block;
-}
+/* ============================
+   SnapWidget container
+============================ */
 .snap-container {
-  position: relative;
-  width: 90%;       /* Preenche a largura do celular */
-  max-width: 400px; /* Limite máximo em tablets/desktops */
-  aspect-ratio: 1 / 1; /* Mantém container quadrado */
-  margin: 20px auto;
-  border: 2px solid #6576f7;
-  border-radius: 20px;
-  overflow: hidden;
+    position: relative;
+    width: 100%;
+    max-width: 400px; /* ou o tamanho máximo que você quer */
+    aspect-ratio: 1 / 1; /* garante que seja quadrado */
+    margin: 20px auto;
+    border: 2px solid #6576f7;
+    border-radius: 20px;
+    overflow: hidden;
 }
 
 .snap-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 20px;
-  object-fit: cover; /* Faz o conteúdo preencher sem deformar */
+    width: 100%;
+    height: 100%;
+    border: none;
+    object-fit: cover; /* Preenche o container sem deformar */
 }
 
-.snap-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 300px;
-        height: 100%;
-        z-index: 10;
-        color: #00f2fe;
+/* Camada bloqueio clique */
+.overlay-block {
+    position: absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    z-index:10;
 }
 
-/* === Menu cores === */
+/* ============================
+   Instruções de contato
+============================ */
+#instrucoesContato {
+    display: none;
+    position: fixed;
+    bottom: 100px;
+    right: 20px;
+    background: #000000cc;
+    color: #fff;
+    padding: 15px;
+    border-radius: 10px;
+    font-size: 14px;
+    z-index: 1002;
+    max-width: 250px;
+    text-align: left;
+}
+
+#instrucoesContato button {
+    background: #fff;
+    color: #000;
+    border: none;
+    font-weight: bold;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+/* ============================
+   Menu de cores
+============================ */
 .menu-toggle {
-  position: fixed;
-  bottom: 80px;
-  right: 40px;
-  background: rgba(72, 41, 195, 0.7);
-  color: white;
-  padding: 12px 14px;
-  border-radius: 50%;
-  cursor: pointer;
-  font-size: 20px;
-  transition: all 0.3s;
+    position: fixed;
+    bottom: 80px;
+    right: 40px;
+    background: rgba(72, 41, 195, 0.7);
+    color: white;
+    padding: 12px 14px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 20px;
+    transition: all 0.3s;
 }
+
 .menu-toggle:hover {
-  background: rgba(0, 0, 0, 0.9);
+    background: rgba(0,0,0,0.9);
 }
+
 .color-menu {
-  position: fixed;
-  bottom: 130px;
-  right: 20px;
-  background: rgba(77, 77, 77, 0.85);
-  border-radius: 15px;
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  z-index: 999;
+    position: fixed;
+    bottom: 130px;
+    right: 20px;
+    background: rgba(77, 77, 77, 0.85);
+    border-radius: 15px;
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 999;
 }
+
 .color-item {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 12px;
-  color: white;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 12px;
+    color: white;
 }
+
 .color-item input[type="color"] {
-  width: 20px;
-  height: 20px;
-  border: none;
-  border-radius: 50%;
-  cursor: pointer;
-  padding: 0;
+    width: 20px;
+    height: 20px;
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    padding: 0;
 }
+
 .reset-btn {
-  background: hsl(233, 81%, 60%);
-  border: none;
-  border-radius: 10px;
-  color: white;
-  font-weight: bold;
-  padding: 5px 8px;
-  cursor: pointer;
-  font-size: 12px;
+    background: hsl(233, 81%, 60%);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    font-weight: bold;
+    padding: 5px 8px;
+    cursor: pointer;
+    font-size: 12px;
 }
+
 .reset-btn:hover {
-  background: #777;
+    background: #777;
 }
 
-/* Celular */
+/* ============================
+   Responsividade
+============================ */
+
+/* Celular (até 480px) */
 @media (max-width: 480px) {
-  .snap-container {
-    width: 90%;
-    aspect-ratio: 1 / 1;
-  }
+    h1 { font-size: 1.5rem; }
+    .icons i { font-size: 1.5rem; }
+    .pix-btn,
+    .contato-btn-mobile { width: 90%; }
 }
 
-/* Tablet */
+/* Tablet (481px a 1024px) */
 @media (min-width: 481px) and (max-width: 1024px) {
-  .snap-container {
-    width: 300px;
-    aspect-ratio: 1 / 1;
-  }
+    h1 { font-size: 2.2rem; }
+    .icons i { font-size: 2rem; }
+    .pix-btn,
+    .contato-btn-mobile { padding: 12px 28px; font-size: 1.1rem; }
 }
 
-/* Desktop */
+/* Desktop grande (1025px ou mais) */
 @media (min-width: 1025px) {
-  .snap-container {
-    width: 400px;
-    aspect-ratio: 1 / 1;
-  }
+    body { max-width: 1000px; margin: 0 auto; }
+    h1 { font-size: 2.5rem; }
+    p { font-size: 1.2rem; }
+    .icons i { font-size: 2.2rem; margin: 0 10px; }
+    .pix-btn,
+    .contato-btn-mobile { padding: 14px 32px; font-size: 1.1rem; }
+    ul { font-size: 18px; line-height: 1.6; }
+    .snap-container iframe { height: 2500px; }
 }
-
-
-
-
-
