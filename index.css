@@ -180,35 +180,38 @@ h1 {
 }
 
 /* ============================
-   Menu de cores
+   Menu de cores (topo direito)
 ============================ */
 .menu-toggle {
   position: fixed;
-  bottom: 80px;
-  right: 40px;
-  background: rgba(72, 41, 195, 0.7);
+  top: 20px;              /* antes era bottom */
+  right: 20px;
+  background: rgba(72, 41, 195, 0.9);
   color: white;
   padding: 12px 14px;
   border-radius: 50%;
   cursor: pointer;
   font-size: 20px;
-  transition: all 0.3s;
+  z-index: 2000;          /* bem acima do iframe */
+  pointer-events: auto;
 }
 
 .menu-toggle:hover {
-  background: rgba(0,0,0,0.9);
+  background: rgba(0, 0, 0, 0.9);
 }
 
 .color-menu {
   position: fixed;
-  bottom: 130px;
+  top: 70px;              /* acompanha o botão no topo */
   right: 20px;
-  background: rgba(77, 77, 77, 0.85);
+  background: rgba(77, 77, 77, 0.95);
   border-radius: 15px;
   display: none;
   flex-direction: column;
   gap: 5px;
-  z-index: 999;
+  z-index: 1999;
+  padding: 10px;
+  pointer-events: auto;
 }
 
 .color-item {
@@ -250,9 +253,18 @@ h1 {
   h1 { font-size: 1.5rem; }
   .icons i { font-size: 3rem; }
   .pix-btn, .contato-btn-mobile { width: 90%; }
-  .p { font-size: 1.2rem; }
+  p { font-size: 1.2rem; }
   .contato-btn-mobile { display: flex; }
-  .snap-container iframe { height: 100%; }
+
+  /* ⬇️ Aqui está o ajuste da imagem */
+  .snap-container {
+    max-width: 300px;
+    aspect-ratio: 4 / 3; /* formato mais retangular */
+  }
+
+  .snap-container iframe {
+    height: 100%;
+  }
 }
 
 @media (min-width: 481px) and (max-width: 1024px) {
@@ -270,4 +282,3 @@ h1 {
   .pix-btn, .contato-btn-mobile { padding: 14px 32px; font-size: 1.1rem; }
   ul { font-size: 18px; line-height: 1.6; }
 }
-
