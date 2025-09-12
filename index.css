@@ -248,7 +248,7 @@ h1 {
 ============================ */
 @media (max-width: 480px) {
   h1 { font-size: 1.5rem; }
-  .icons i { font-size: 2rem; }
+  .icons i { font-size: 3rem; }
   .pix-btn, .contato-btn-mobile { width: 90%; }
   .p { font-size: 1.2rem; }
   .contato-btn-mobile { display: flex; }
@@ -270,3 +270,4 @@ h1 {
   .pix-btn, .contato-btn-mobile { padding: 14px 32px; font-size: 1.1rem; }
   ul { font-size: 18px; line-height: 1.6; }
 }
+
