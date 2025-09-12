@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Luan Goulart Despachante</title>
 
-   <!-- Preconnect para melhorar conexões externas -->
+    <!-- Preconnect para melhorar conexões externas -->
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin />
     <link rel="preconnect" href="https://snapwidget.com" crossorigin />
 
@@ -31,195 +31,6 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
       />
     </noscript>
-  <style>
-      /* --- Reset básico e responsividade --- */
-      body {
-        margin: 0;
-        font-family: Arial, sans-serif;
-        background: #f5f5f5;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        padding: 10px;
-      }
-
-      h1,
-      p {
-        margin: 10px 0;
-      }
-      h1 {
-        font-size: 2rem;
-        font-weight: bold;
-      }
-      ul {
-        text-align: left;
-        margin-bottom: 20px;
-        font-family: Arial, sans-serif;
-        font-size: 16px;
-      }
-
-      /* --- Ícones sociais --- */
-      .icons {
-        display: flex;
-        justify-content: center;
-        gap: 15px;
-        margin: 15px 0;
-        flex-wrap: wrap;
-      }
-
-      .icons i {
-        font-size: 2rem;
-        cursor: pointer;
-        transition: transform 0.2s;
-      }
-
-      .icons i:hover {
-        transform: scale(1.2);
-      }
-
-      /* --- Botões --- */
-      .pix-btn,
-      .contato-btn-mobile {
-        display: inline-block;
-        margin: 10px 5px;
-        padding: 10px 20px;
-        font-size: 1rem;
-        font-weight: bold;
-        border: none;
-        border-radius: 50px;
-        cursor: pointer;
-      }
-
-      .pix-btn {
-        background: linear-gradient(135deg, #000000, #00f2fe);
-        color: white;
-      }
-
-      .pix-btn:hover {
-        transform: scale(1.05);
-      }
-
-      .contato-btn-mobile {
-        background: linear-gradient(135deg, #9f93fb, #000000);
-        color: white;
-      }
-
-      .contato-btn-mobile:hover {
-        transform: scale(1.05);
-      }
-
-      /* --- Mensagem copiada --- */
-      #copiedMsg {
-        display: none;
-        color: rgb(230, 218, 54);
-        font-weight: bold;
-        margin-top: 5px;
-      }
-
-      /* --- SnapWidget container --- */
-     /* .snap-container {
-        position: relative;
-        width: 300px;
-        max-width: 100%;
-        margin: 20px auto;
-        border: 2px solid #6576f7;
-        border-radius: 20px;
-        overflow: hidden;
-      }
-
-      .snap-container iframe {
-        width: 100%;
-        height: 300px;
-        border: none;
-        overflow: hidden;
-      }
-
-      /* Camada bloqueio clique 
-      .snap-overlay {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 300px;
-        height: 100%;
-        z-index: 10;
-        color: #00f2fe;
-      } */
-
-      /* --- Instruções contato --- */
-      #instrucoesContato {
-        display: none;
-        background: #fff;
-        padding: 15px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        margin: 20px 0;
-        max-width: 350px;
-        text-align: left;
-      }
-
-      #instrucoesContato button {
-        margin-top: 10px;
-        padding: 5px 10px;
-        border-radius: 8px;
-        border: none;
-        cursor: pointer;
-        background: #6576f7;
-        color: white;
-        font-weight: bold;
-      }
-
-      /* --- Menu cores --- */
-      .menu-toggle {
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        background: #6576f7;
-        color: white;
-        padding: 10px;
-        border-radius: 50%;
-        cursor: pointer;
-        font-size: 1.5rem;
-        z-index: 1000;
-      }
-
-      .color-menu {
-        position: fixed;
-        bottom: 70px;
-        right: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-        padding: 10px;
-        display: none;
-        z-index: 1000;
-        width: 150px;
-      }
-
-      .color-item {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin: 5px 0;
-      }
-
-      .color-item input[type="color"] {
-        cursor: pointer;
-      }
-
-      .reset-btn {
-        margin-top: 10px;
-        width: 100%;
-        padding: 5px;
-        border: none;
-        border-radius: 8px;
-        cursor: pointer;
-        background: #6576f7;
-        color: white;
-        font-weight: bold;
-      }
-
-     
-    </style>
   </head>
   <body>
     <div class="content">
@@ -261,15 +72,14 @@
 
       <!-- SnapWidget -->
       <div class="snap-container">
-  <iframe
-    src="https://snapwidget.com/embed/1107129"
-    allowtransparency="true"
-    scrolling="no"
-    title="Posts do Instagram"
-  ></iframe>
-  <div class="overlay-block"></div>
-</div>
-
+        <iframe
+          src="https://snapwidget.com/embed/1107129"
+          allowtransparency="true"
+          scrolling="no"
+          title="Posts do Instagram"
+        ></iframe>
+        <div class="overlay-block"></div>
+      </div>
 
       <p contenteditable="true">Confira nossos serviços:</p>
       <ul>
@@ -319,7 +129,7 @@
     </div>
 
     <!-- Scripts -->
-     <script src="https://snapwidget.com/js/snapwidget.js" defer></script>
+    <script src="https://snapwidget.com/js/snapwidget.js" defer></script>
     <script src="index.js" defer></script>
   </body>
 </html>
