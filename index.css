@@ -232,6 +232,7 @@ h1 {
     .icons i { font-size: 1.5rem; }
     .pix-btn,
     .contato-btn-mobile { width: 90%; }
+    .snap-container iframe { height: 100%; }
 }
 
 /* Tablet (481px a 1024px) */
@@ -251,5 +252,5 @@ h1 {
     .pix-btn,
     .contato-btn-mobile { padding: 14px 32px; font-size: 1.1rem; }
     ul { font-size: 18px; line-height: 1.6; }
-    .snap-container iframe { height: 2500px; }
+    .snap-container iframe { height: 100%; }
 }
