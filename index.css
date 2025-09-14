@@ -284,6 +284,8 @@ h1 {
   p { font-size: 1.2rem; }
   .icons i { font-size: 3rem; }
   .pix-btn, .contato-btn-mobile { padding: 12px 28px; font-size: 1.3rem; }
+   .snap-container {
+    max-width: 300px;
 }
 
 @media (min-width: 1025px) {
