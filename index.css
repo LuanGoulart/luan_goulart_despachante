@@ -276,6 +276,7 @@ h1 {
   /* ⬇️ Aqui está o ajuste da imagem */
    .snap-container {
     max-width: 300px;
+   }
   
 }
 
@@ -297,6 +298,7 @@ h1 {
   .pix-btn, .contato-btn-mobile { padding: 14px 32px; font-size: 1.1rem; }
   ul { font-size: 18px; line-height: 1.6; }
 }
+
 
 
 
