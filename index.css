@@ -235,7 +235,7 @@ footer {
   font-size: 20px;
   z-index: 2000;          /* bem acima do iframe */
   pointer-events: auto;
-  display: flex; /* Remove completamente do layout */
+  display: none; /* Remove completamente do layout */
 }
 
 .menu-toggle:hover {
@@ -326,3 +326,4 @@ footer {
   ul { font-size: 18px; line-height: 1.6; }
 
 }
+
