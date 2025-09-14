@@ -269,15 +269,14 @@ h1 {
 @media (max-width: 480px) {
   h1 { font-size: 1.5rem; }
   .icons i { font-size: 3rem; }
-  .pix-btn, .contato-btn-mobile { width: 80%; }
+  .pix-btn, .contato-btn-mobile { width: 90%; }
   p { font-size: 1.2rem; }
   .contato-btn-mobile { display: flex; }
 
   /* ⬇️ Aqui está o ajuste da imagem */
-   .snap-container {
+  .snap-container {
     max-width: 300px;
-   }
-  
+  }
 }
 
 @media (min-width: 481px) and (max-width: 1024px) {
@@ -285,9 +284,11 @@ h1 {
   p { font-size: 1.2rem; }
   .icons i { font-size: 3rem; }
   .pix-btn, .contato-btn-mobile { padding: 12px 28px; font-size: 1.3rem; }
-   .snap-container {
+
+  .snap-container {
     max-width: 300px;
-   }
+  }
+  
 }
 
 @media (min-width: 1025px) {
@@ -298,10 +299,3 @@ h1 {
   .pix-btn, .contato-btn-mobile { padding: 14px 32px; font-size: 1.1rem; }
   ul { font-size: 18px; line-height: 1.6; }
 }
-
-
-
-
-
-
-
