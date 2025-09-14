@@ -274,13 +274,7 @@ h1 {
   .contato-btn-mobile { display: flex; }
 
   /* ⬇️ Aqui está o ajuste da imagem */
-  .snap-container {
-   max-width: 350px;
-  }
-
-  .snap-container iframe {
-    height: 100%;
-  }
+  
 }
 
 @media (min-width: 481px) and (max-width: 1024px) {
@@ -288,14 +282,6 @@ h1 {
   p { font-size: 1.2rem; }
   .icons i { font-size: 3rem; }
   .pix-btn, .contato-btn-mobile { padding: 12px 28px; font-size: 1.3rem; }
-
-   .snap-container {
-   max-width: 350px;
-  }
-
-  .snap-container iframe {
-    height: 100%;
-  }
 }
 
 @media (min-width: 1025px) {
@@ -306,5 +292,6 @@ h1 {
   .pix-btn, .contato-btn-mobile { padding: 14px 32px; font-size: 1.1rem; }
   ul { font-size: 18px; line-height: 1.6; }
 }
+
 
 
