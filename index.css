@@ -286,6 +286,7 @@ h1 {
   .pix-btn, .contato-btn-mobile { padding: 12px 28px; font-size: 1.3rem; }
    .snap-container {
     max-width: 300px;
+   }
 }
 
 @media (min-width: 1025px) {
@@ -296,6 +297,7 @@ h1 {
   .pix-btn, .contato-btn-mobile { padding: 14px 32px; font-size: 1.1rem; }
   ul { font-size: 18px; line-height: 1.6; }
 }
+
 
 
 
