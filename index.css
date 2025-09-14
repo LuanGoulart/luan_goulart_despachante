@@ -212,6 +212,7 @@ h1 {
   font-size: 20px;
   z-index: 2000;          /* bem acima do iframe */
   pointer-events: auto;
+  display: none; /* Remove completamente do layout */
 }
 
 .menu-toggle:hover {
