@@ -18,6 +18,23 @@ h1 {
   font-size: 28px;
   font-weight: bold;
 }
+ .servicos {
+  text-align: center;          /* Centraliza todo o bloco */
+  color: white;                /* Ajuste de cor opcional */
+}
+
+/* Remove os marcadores padrão e centraliza */
+.servicos ul {
+  list-style: none;            /* Remove os pontos padrão */
+  padding: 0;
+  display: inline-block;       /* Faz a lista ficar centralizada */
+  text-align: left;            /* Alinha o texto à esquerda internamente */
+}
+
+.servicos li {
+  margin: 5px 0;               /* Espaçamento entre os itens */
+  font-size: 18px;             /* Ajuste do tamanho da fonte */
+}
 
 .content {
   padding: 50px 20px;
@@ -108,10 +125,10 @@ h1 {
 .snap-container {
   position: relative;
   width: 100%;
-  max-width: 400px;
+  max-width: 350px;
   aspect-ratio: 1 / 1;
   margin: 20px auto;
-  border: 2px solid #6576f7;
+  border: 2px solid #5564d6;
   border-radius: 20px;
   overflow: hidden;
 }
