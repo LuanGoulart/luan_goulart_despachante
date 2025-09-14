@@ -235,7 +235,7 @@ footer {
   font-size: 20px;
   z-index: 2000;          /* bem acima do iframe */
   pointer-events: auto;
-  display: none; /* Remove completamente do layout */
+  display: flex; /* Remove completamente do layout */
 }
 
 .menu-toggle:hover {
@@ -324,4 +324,5 @@ footer {
   .icons i { font-size: 3rem; margin: 0 10px; }
   .pix-btn, .contato-btn-mobile { padding: 14px 32px; font-size: 1.1rem; }
   ul { font-size: 18px; line-height: 1.6; }
+
 }
