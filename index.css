@@ -202,11 +202,11 @@ h1 {
 ============================ */
 .menu-toggle {
   position: fixed;
-  top: 20px;              /* antes era bottom */
-  right: 20px;
-  background: rgba(72, 41, 195, 0.9);
+  top: 20px;          
+  right: 15px;
+  background: rgba(72, 41, 195, 0.597);
   color: white;
-  padding: 12px 14px;
+  padding: 10px 10px;
   border-radius: 50%;
   cursor: pointer;
   font-size: 20px;
@@ -215,7 +215,8 @@ h1 {
 }
 
 .menu-toggle:hover {
-  background: rgba(0, 0, 0, 0.9);
+  /*background: rgba(0, 0, 0, 0.9);*/
+  background: transparent;
 }
 
 .color-menu {
