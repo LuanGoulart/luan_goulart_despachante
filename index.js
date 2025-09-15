@@ -126,6 +126,7 @@ EMAIL:luangoulartdesp@hotmail.com
 URL;TYPE=WORK,WhatsApp:https://wa.me/5535999792207
 URL;TYPE=WORK,Instagram:https://www.instagram.com/luangoulartdesp
 URL;TYPE=WORK,Facebook:https://www.facebook.com/despachanteluangoulart/about
+URL;Tipe=Work,Maps:https://maps.app.goo.gl/jEeoBW8deDvVBbgp7
 ORG:Despachante Luan Goulart
 END:VCARD`;
   const blob = new Blob([vCard], { type: "text/vcard;charset=utf-8" });
@@ -139,3 +140,4 @@ END:VCARD`;
 
 /* Fechar instruções contato */
 function fecharInstrucoes(){ document.getElementById("instrucoesContato").style.display="none"; }
+
