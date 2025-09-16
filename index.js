@@ -140,4 +140,3 @@ END:VCARD`;
 
 /* Fechar instruções contato */
 function fecharInstrucoes(){ document.getElementById("instrucoesContato").style.display="none"; }
-
